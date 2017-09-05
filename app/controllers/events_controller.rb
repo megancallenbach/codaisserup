@@ -29,7 +29,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    if @event.update(room_params)
+    if @event.update(event_params)
       redirect_to @event, notice: "Event updated"
     else
       render :edit
@@ -45,7 +45,7 @@ class EventsController < ApplicationController
     params
       .require(:event)
       .permit(
-        :name, :description, :location, :price, :capacity, :includes_food, :includes_drinks, :starts_at, :ends_at, :active, :category_ids
+        :name, :description, :location, :price, :capacity, :includes_food, :includes_drinks, :starts_at, :ends_at, :active, category_ids: []
       )
   end
 end
