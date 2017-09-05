@@ -15,3 +15,34 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.navbar {
+  margin-bottom: 0;
+  background-color: transparent;
+  border: 0;
+  padding: 10px 20px;
+}
+
+.jumbotron {
+  background-color: transparent;
+  height: 600px;
+}
+
+.header-image {
+  background-image: url("header.jpg");
+  background-size: cover;
+  h1 {
+    color: white;
+    text-align: center;
+  }
+  p {
+    text-align: center;
+    color: lightgrey;
+  }
+}
