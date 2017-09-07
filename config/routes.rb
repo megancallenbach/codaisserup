@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "pages#home"
 
   devise_for :users
-
+  resources :photos
   resources :users, only: [:show]
   resources :events, except: [:destroy]
   resources :categories

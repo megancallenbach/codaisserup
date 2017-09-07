@@ -44,7 +44,7 @@ class EventsController < ApplicationController
         @event.photos.create(image: image)
       end
 
-      redirect_to edit_event_path(@event), notice: "Event successfully updated"
+      redirect_to event_path(@event), notice: "Event successfully updated"
     else
       render :edit
     end
