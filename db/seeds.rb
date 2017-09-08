@@ -8,10 +8,11 @@
 start_at = DateTime.strptime('2001-02-03T10:05:06+07:00', '%Y-%m-%dT%H:%M:%S%z')
 end_at = DateTime.strptime('2001-02-03T17:05:06+07:00', '%Y-%m-%dT%H:%M:%S%z')
 
+Profile.destroy_all
+Registration.destroy_all
 Photo.destroy_all
 Category.destroy_all
 Event.destroy_all
-Profile.destroy_all
 User.destroy_all
 
 #Users
@@ -35,3 +36,8 @@ event2 = Event.create!(name: "Amsterdam Pizza Festival", description: "Bring you
 photo1 = Photo.create!(remote_image_url: "http://res.cloudinary.com/meganc94/image/upload/v1504773994/event1_ghrqmj.jpg", event: event1)
 photo1 = Photo.create!(remote_image_url: "http://res.cloudinary.com/meganc94/image/upload/v1504773991/event2_hzridu.jpg", event: event2)
 photo1 = Photo.create!(remote_image_url: "http://res.cloudinary.com/meganc94/image/upload/v1504773988/event3_s8bcm2.jpg", event: event2)
+
+
+#registrations
+Registration.create!(event: event2, user: kevin, price: 30, guests_count: 3)
+Registration.create!(event: event2, user: smith, price: 20, guests_count: 2)
