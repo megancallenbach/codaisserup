@@ -2,6 +2,7 @@ class Api::EventsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
+    events = Event.all
     render status: 200, json: events
   end
 
