@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   resources :profiles, only: [:new, :edit, :create, :update]
 
   namespace :api do
-    resources :events
+    resources :events do
+      resources :registrations, only: [:create]
+    end
     resources :categories
   end
 
