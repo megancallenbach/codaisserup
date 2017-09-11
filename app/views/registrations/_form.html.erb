@@ -1,0 +1,7 @@
+<%= form_for [@event, @event.registrations.create] do |f| %>
+  <p>Attending <%= @event.name %>?</p>
+
+  <div class="form-group">
+    <label>How many guests will you bring?</label>
+    <%= f.number_field :guests_count %>
+  </div>

@@ -2,10 +2,25 @@
   <div class="panel-heading"><%= @event.name %></div>
 
   <div class="panel-body">
+    <!-- Booking Form -->
+    <% if current_user != @event.user %>
+      <div class="panel panel-primary">
+        <div class="panel-heading">Register for this event</div>
 
+        <div class="panel-body">
+          <%= render 'registrations/form' %>
+        </div>
+      </div>
+    <% end %>
+
+
+
+
+    <!-- About -->
+    <h4>About</h4>
     <p>Location <%= @event.location %></p>
     <p>Host: <%= @event.user.email %></p>
-
+    <p>Description: <%= @event.description %></p>
     <!-- Main Info -->
     <h4>General Information</h4>
 
@@ -13,9 +28,7 @@
     <p>Ending Time: <%= @event.ends_at %></p>
     <p>Price: <%= @event.price == 0 ? "Free" : @event.price %> €</p>
     <p>Capacity: <%= @event.capacity %> </p>
-    <!-- About -->
-    <h4>About</h4>
-    <p>Description: <%= @event.description %></p>
+
 
     <!-- Additional Info-->
     <h4>Additional Information</h4>
